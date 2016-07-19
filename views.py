@@ -1,4 +1,5 @@
-## export FLASK_APP=views.py
+## export FLASK_APP=views.py (on mac)
+## set FLASK_APP=views.py (on PC)
 
 from flask import Flask, render_template, request, url_for, app
 import rule_info as rule
@@ -57,11 +58,9 @@ def show_docket_info(docketId):
 with app.test_request_context():
 	url_for('static', filename='style.css')
 
-'''
 # Run the app :)
 if __name__ == '__main__':
   app.run( 
         host="0.0.0.0",
         port=int("80")
   )
-'''
