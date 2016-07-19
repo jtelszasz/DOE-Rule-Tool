@@ -1,0 +1,54 @@
+<h1> {{ product_name }} </h1>
+
+<h2>Latest Standards Rule: {{ latest_STD_docket }}</h2>
+Stage: {{ latest_STD_stage }} <br>
+Last Document Posted Date: {{ latest_STD_postedDate }} <br>
+
+<h2>Latest Test Procedure Rule: {{ latest_TP_docket }}</h2>
+Stage: {{ latest_TP_stage }} <br>
+Last Document Posted Date: {{ latest_TP_postedDate }} <br>
+
+<h1>  All Documents </h1>
+Right now this is sorted first by docket and then by posted date.  Most recent is at the top.  This would get separated into tables for each docket instead of one big long messy table.
+
+<div>
+{{ DOE_docs|safe }}
+</div>
+
+
+<h1> Dockets </h1>
+Obviously just a list of the unique dockets found that are associated with the product.  Broken up by type by searching for "TP" or "STD" in the docketId.  Need to add "DET" for coverage determination rulemakings.
+
+<div>
+<h3> Energy Conservation Standards Dockets </h3>
+{{ STD_docket_info|safe }}
+</div>
+
+
+<div>
+<h3> Test Procedure Dockets </h3>
+{{ TP_docket_info|safe }}
+</div>
+
+<h1> Document Types </h1>
+Broken up by document types.  Might be useful in another view/page?  
+
+<div>
+<h3> Final Rules </h3>
+{{ final_rules|safe }}
+</div>
+
+<div>
+<h3> Proposed Rules </h3>
+{{ noprs|safe }}
+</div>
+
+<div>
+<h3> Other Notices </h3>
+{{ other_notices|safe }}
+</div>
+
+<div>
+<h3> Technical Support Documents </h3>
+{{ tsds|safe }}
+</div>
