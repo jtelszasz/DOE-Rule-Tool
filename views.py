@@ -4,7 +4,9 @@
 from flask import Flask, render_template, request, url_for, app
 import rule_info as rule
 import pandas as pd
+
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 df = pd.read_csv("temp.csv")
 #df = rule.buildDataFrame()
